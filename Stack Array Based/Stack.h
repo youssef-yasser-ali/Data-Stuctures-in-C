@@ -1,9 +1,9 @@
 #ifndef STACK_H_INCLUDED
 #define STACK_H_INCLUDED
 
-typedef int typeEntry;
+typedef char typeEntry;
 
-#define maxEntry 10
+#define maxEntry 100
 
 
 

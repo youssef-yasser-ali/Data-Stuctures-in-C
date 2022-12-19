@@ -15,7 +15,6 @@ typedef struct stackNode {
 typedef struct stack{
 
     StackNode *top ;
-    int Size ;
 
 }Stack;
 
@@ -29,7 +28,7 @@ void push(typeEntry item,Stack *ps);
 void pop( typeEntry *pe,Stack *ps);
 void stackTop( typeEntry *pe,Stack *ps);
 void clearStack(Stack *ps);
-void traverseStack(Stack *ps ,void (*pf)(typeEntry));
+void TraverseStack(Stack *ps ,void (*pf)(typeEntry));
 
 
 

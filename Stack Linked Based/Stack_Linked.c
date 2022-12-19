@@ -5,27 +5,28 @@
 void createStack(Stack *ps){
 
     ps->top =NULL ;
-    ps->Size=0;
 
 }
 
 void push(typeEntry item,Stack *ps){
 
-    StackNode *p =(StackNode*) malloc(sizeof(StackNode));
-
+    StackNode *p =(StackNode*)malloc(sizeof(StackNode));
     p->entry = item;
     p->next = ps->top;
     ps->top = p;
-    ps->Size++;
+
+
 
 }
 void pop( typeEntry *pe,Stack *ps){
-   *pe =  ps->top->entry;
 
-   StackNode *temp = ps->top ;
-   ps->top = temp->next;
-   free(temp);
-   ps->Size--;
+	StackNode *p;
+
+	*pe=ps->top->entry;
+	p=ps->top;
+	ps->top=ps->top->next;
+	free(p);
+
 
 }
 int stackEmpty(Stack *ps){
@@ -48,22 +49,21 @@ while(q){
 
 }
 ps->top = NULL;
-ps->Size = 0 ;
+}
+
+void TraverseStack(Stack *ps, void (*pvisit)(typeEntry)){
+
+	for(StackNode *p=ps->top; p; p=p->next)
+		(*pvisit)(p->entry);
 
 }
 
-void traverseStack(Stack *ps ,void (*pf)(typeEntry)){
-
-    StackNode *p = ps->top ;
-    while(p){
-        (*pf)(p->entry);
-        p=p->next;
-    }
-}
-
-int stackSize(Stack *ps){
-
-    return ps->Size;
+int	StackSize(Stack *ps){
+  int x;
+  StackNode *ptrs=ps->top;
+  for(x=0; ptrs; ptrs=ptrs->next)
+    x++;
+  return x;
 }
 
 void stackTop( typeEntry *pe,Stack *ps);

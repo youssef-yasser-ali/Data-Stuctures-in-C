@@ -1,8 +1,8 @@
 #include <stdio.h>
+#include <stdbool.h>
+
 #include <stdlib.h>
 #include "Stack.h"
-
-
 int stackSizeUser(Stack *ps){
  int a =0;
 
@@ -26,32 +26,34 @@ void display(typeEntry e){
 }
 
 int main()
+
+
 {
+    Stack s1;
+    char s[100], b;
+    createStack(&s1);
+    bool state = true;
 
-  Stack s1;
 
-  createStack(&s1);
+    printf(" Enter The String : " );
+    scanf("%s",s);
 
-    push(4,&s1);
-    push(5,&s1);
-    push(6,&s1);
+  for (int i = 0 ; s[i] != '\0';i++){
+        b = s[i];
+        push(b,&s1);
+}
 
-    traverseStack( &s1, &display);
 
-    int st,stUser,x,y,z,sizeUser;
-    stackTop(&st,&s1);
-    stackTopUser(&stUser,&s1);
-    pop(&x,&s1);
-    sizeUser = stackSizeUser(&s1);
-    pop(&y,&s1);
-    pop(&z,&s1);
+char el ;
 
-    printf("%d from stack top\n",st);
-    printf("%d from stack top user\n",stUser);
-    printf("%d\n",x);
-    printf("%d\n",y);
-    printf("%d\n",z);
-    printf("stack size user  %d ",sizeUser);
+while(!stackEmpty(&s1)){
+
+
+        pop(&el,&s1);
+        printf("%c" ,el);
+
+
+    }
 
 
 
