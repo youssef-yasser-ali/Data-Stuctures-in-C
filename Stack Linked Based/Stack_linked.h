@@ -20,15 +20,15 @@ typedef struct stack{
 
 
 
-int stackSize(Stack *ps);
-int stackFull(Stack *ps );
-int stackEmpty(Stack *ps);
-void createStack(Stack *ps);
-void push(typeEntry item,Stack *ps);
-void pop( typeEntry *pe,Stack *ps);
-void stackTop( typeEntry *pe,Stack *ps);
-void clearStack(Stack *ps);
-void TraverseStack(Stack *ps ,void (*pf)(typeEntry));
+int stackSize(Stack *);
+int stackFull(Stack * );
+int stackEmpty(Stack *);
+void createStack(Stack *);
+void push(typeEntry ,Stack *);
+void pop( typeEntry *,Stack *);
+void stackTop( typeEntry *,Stack *);
+void clearStack(Stack *);
+void TraverseStack(Stack * ,void (*pf)(typeEntry));
 
 
 

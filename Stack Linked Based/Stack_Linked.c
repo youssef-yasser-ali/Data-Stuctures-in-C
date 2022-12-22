@@ -10,7 +10,7 @@ void createStack(Stack *ps){
 
 void push(typeEntry item,Stack *ps){
 
-    StackNode *p =(StackNode*)malloc(sizeof(StackNode));
+    StackNode *p =(StackNode*) malloc(sizeof(StackNode));
     p->entry = item;
     p->next = ps->top;
     ps->top = p;
@@ -51,20 +51,23 @@ while(q){
 ps->top = NULL;
 }
 
-void TraverseStack(Stack *ps, void (*pvisit)(typeEntry)){
+void TraverseStack(Stack *ps, void (*pf)(typeEntry)){
 
 	for(StackNode *p=ps->top; p; p=p->next)
-		(*pvisit)(p->entry);
+		(*pf)(p->entry);
 
 }
 
 int	StackSize(Stack *ps){
   int x;
-  StackNode *ptrs=ps->top;
+  StackNode *ptrs =ps->top;
   for(x=0; ptrs; ptrs=ptrs->next)
     x++;
   return x;
 }
 
-void stackTop( typeEntry *pe,Stack *ps);
+void stackTop( typeEntry *pe,Stack *ps){
+
+        *pe=ps->top->entry;
+}
 
