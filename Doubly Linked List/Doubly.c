@@ -67,9 +67,6 @@ void destoyList(Doubly *D){
 
     }
 
-    (*D) =NULL ;
-
-
 }
 
 
