@@ -120,9 +120,12 @@ if(pos ==0 ){
 
         *pe = q->data ;
         q->pre->next = q->next ;
+        if(q->next){
         q->next->pre = q->pre ;
+        }
 
         free(q);
+
 
 }
 
